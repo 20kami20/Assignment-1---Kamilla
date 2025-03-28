@@ -34,6 +34,10 @@ public class Main {
             System.out.print("Enter a number: ");
             int n = scanner.nextInt();
             System.out.println("Factorial: " + factorial(n));
+        } else if (task == 5) {
+            System.out.print("Enter the Fibonacci index: ");
+            int n = scanner.nextInt();
+            System.out.println("Fibonacci: " + fibonacci(n));
         }
         long endTime = System.nanoTime();
         System.out.println("Execution Time: " + (endTime - startTime) / 1_000_000 + " milliseconds");
@@ -73,5 +77,14 @@ public class Main {
     public static int factorial(int n) {
         if (n == 0 || n == 1) return 1;
         return n * factorial(n - 1);
+    }
+    /**
+     * Recursively finds the nth Fibonacci number.
+     * Time Complexity: O(2^n)
+     */
+    public static int fibonacci(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }
