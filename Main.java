@@ -26,31 +26,31 @@ public class Main {
             int[] arr = new int[n];
             for (int i = 0; i < n; i++) arr[i] = scanner.nextInt();
             System.out.println("Average: " + findAverage(arr, n));
-        } else if (task == 3) {
+        } else if (task == 3) { // Check if a number is prime
             System.out.print("Enter a number: ");
             int n = scanner.nextInt();
             System.out.println(isPrime(n, 2) ? "Prime" : "Composite");
-        } else if (task == 4) {
+        } else if (task == 4) { // Compute the factorial of a number
             System.out.print("Enter a number: ");
             int n = scanner.nextInt();
             System.out.println("Factorial: " + factorial(n));
-        } else if (task == 5) {
+        } else if (task == 5) { // Find the nth Fibonacci number
             System.out.print("Enter the Fibonacci index: ");
             int n = scanner.nextInt();
             System.out.println("Fibonacci: " + fibonacci(n));
-        } else if (task == 6) {
+        } else if (task == 6) { // Compute a^n using recursion
             System.out.print("Enter base and exponent: ");
             int a = scanner.nextInt();
             int n = scanner.nextInt();
             System.out.println("Power: " + power(a, n));
-        } else if (task == 7) {
+        } else if (task == 7) { // Print an array in reverse order
             System.out.print("Enter the number of elements: ");
             int n = scanner.nextInt();
             int[] arr = new int[n];
             for (int i = 0; i < n; i++) arr[i] = scanner.nextInt();
             System.out.println("Reversed array:");
             reversePrint(arr, n);
-        } else if (task == 8) {
+        } else if (task == 8) { // Check if a string consists only of digits
             System.out.print("Enter a string: ");
             String s = scanner.next();
             System.out.println(isDigitString(s, 0) ? "Yes" : "No");
