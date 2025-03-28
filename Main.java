@@ -26,6 +26,10 @@ public class Main {
             int[] arr = new int[n];
             for (int i = 0; i < n; i++) arr[i] = scanner.nextInt();
             System.out.println("Average: " + findAverage(arr, n));
+        } else if (task == 3) {
+            System.out.print("Enter a number: ");
+            int n = scanner.nextInt();
+            System.out.println(isPrime(n, 2) ? "Prime" : "Composite");
         }
         long endTime = System.nanoTime();
         System.out.println("Execution Time: " + (endTime - startTime) / 1_000_000 + " milliseconds");
@@ -41,8 +45,22 @@ public class Main {
         if (n == 1) return arr[0];
         return Math.min(arr[n - 1], findMin(arr, n - 1));
     }
-    // Method to find the average of an array
+    /**
+     * Recursively calculates the average of the elements in the array.
+     * Time Complexity: O(n)
+     */
     private static double findAverage(int[] arr, int n) {
         return findSum(arr, n) / (double) n;
     }
+     /**
+     * Recursively checks if a number is prime.
+     * Time Complexity: O(√n)
+     */
+    public static boolean isPrime(int n, int i) {
+        if (n < 2) return false;
+        if (i * i > n) return true;
+        if (n % i == 0) return false;
+        return isPrime(n, i + 1);
+    }
+
 }
