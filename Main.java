@@ -50,6 +50,10 @@ public class Main {
             for (int i = 0; i < n; i++) arr[i] = scanner.nextInt();
             System.out.println("Reversed array:");
             reversePrint(arr, n);
+        } else if (task == 8) {
+            System.out.print("Enter a string: ");
+            String s = scanner.next();
+            System.out.println(isDigitString(s, 0) ? "Yes" : "No");
         }
         long endTime = System.nanoTime();
         System.out.println("Execution Time: " + (endTime - startTime) / 1_000_000 + " milliseconds");
@@ -115,5 +119,14 @@ public class Main {
         if (n == 0) return;
         System.out.print(arr[n - 1] + " ");
         reversePrint(arr, n - 1);
+    }
+    /**
+     * Recursively checks if a string consists only of digits.
+     * Time Complexity: O(n)
+     */
+    public static boolean isDigitString(String s, int index) {
+        if (index == s.length()) return true;
+        if (!Character.isDigit(s.charAt(index))) return false;
+        return isDigitString(s, index + 1);
     }
 }
