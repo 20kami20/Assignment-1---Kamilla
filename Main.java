@@ -38,6 +38,11 @@ public class Main {
             System.out.print("Enter the Fibonacci index: ");
             int n = scanner.nextInt();
             System.out.println("Fibonacci: " + fibonacci(n));
+        } else if (task == 6) {
+            System.out.print("Enter base and exponent: ");
+            int a = scanner.nextInt();
+            int n = scanner.nextInt();
+            System.out.println("Power: " + power(a, n));
         }
         long endTime = System.nanoTime();
         System.out.println("Execution Time: " + (endTime - startTime) / 1_000_000 + " milliseconds");
@@ -86,5 +91,13 @@ public class Main {
         if (n == 0) return 0;
         if (n == 1) return 1;
         return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+    /**
+     * Recursively calculates the power of a number.
+     * Time Complexity: O(n)
+     */
+    public static int power(int a, int n) {
+        if (n == 0) return 1;
+        return a * power(a, n - 1);
     }
 }
