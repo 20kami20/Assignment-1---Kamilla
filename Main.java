@@ -30,6 +30,10 @@ public class Main {
             System.out.print("Enter a number: ");
             int n = scanner.nextInt();
             System.out.println(isPrime(n, 2) ? "Prime" : "Composite");
+        } else if (task == 4) {
+            System.out.print("Enter a number: ");
+            int n = scanner.nextInt();
+            System.out.println("Factorial: " + factorial(n));
         }
         long endTime = System.nanoTime();
         System.out.println("Execution Time: " + (endTime - startTime) / 1_000_000 + " milliseconds");
@@ -62,5 +66,12 @@ public class Main {
         if (n % i == 0) return false;
         return isPrime(n, i + 1);
     }
-
+    /**
+     * Recursively calculates the factorial of a number.
+     * Time Complexity: O(n)
+     */
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) return 1;
+        return n * factorial(n - 1);
+    }
 }
