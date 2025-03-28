@@ -43,6 +43,13 @@ public class Main {
             int a = scanner.nextInt();
             int n = scanner.nextInt();
             System.out.println("Power: " + power(a, n));
+        } else if (task == 7) {
+            System.out.print("Enter the number of elements: ");
+            int n = scanner.nextInt();
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++) arr[i] = scanner.nextInt();
+            System.out.println("Reversed array:");
+            reversePrint(arr, n);
         }
         long endTime = System.nanoTime();
         System.out.println("Execution Time: " + (endTime - startTime) / 1_000_000 + " milliseconds");
@@ -99,5 +106,14 @@ public class Main {
     public static int power(int a, int n) {
         if (n == 0) return 1;
         return a * power(a, n - 1);
+    }
+    /**
+     * Recursively prints an array in reverse order.
+     * Time Complexity: O(n)
+     */
+    public static void reversePrint(int[] arr, int n) {
+        if (n == 0) return;
+        System.out.print(arr[n - 1] + " ");
+        reversePrint(arr, n - 1);
     }
 }
